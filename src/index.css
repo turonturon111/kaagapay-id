@@ -1,0 +1,900 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Atkinson Hyperlegible Next', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #f8fafc;
+    color: #0f291e;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility Sizing Styles */
+/*
+  Maintain html root font-size at 100% (16px) across scaling modes so that
+  layout container paddings, card widths, icon boxes, button heights, outer margins,
+  and grid gaps remain proportionally stable.
+  Only typography font sizes and line heights are scaled up.
+*/
+html {
+  font-size: 100%;
+}
+
+/* ==========================================================================
+   5-Point Text Typography Scaling (Proportional text-only scale)
+   Maintains container widths and outer margins while scaling text and line-heights.
+   ========================================================================== */
+html {
+  font-size: 100%;
+}
+
+/* Level 1: Compact (approx 90% text scale) */
+html.font-scale-compact body {
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+html.font-scale-compact .text-\[6px\],
+html.font-scale-compact .text-\[6\.5px\] { font-size: 6px !important; }
+html.font-scale-compact .text-\[7px\],
+html.font-scale-compact .text-\[7\.5px\] { font-size: 7px !important; }
+html.font-scale-compact .text-\[8px\],
+html.font-scale-compact .text-\[8\.5px\] { font-size: 8px !important; }
+html.font-scale-compact .text-\[9px\] { font-size: 8.5px !important; }
+html.font-scale-compact .text-\[10px\] { font-size: 9.5px !important; }
+html.font-scale-compact .text-\[11px\] { font-size: 10.5px !important; }
+html.font-scale-compact .text-xs { font-size: 11px !important; }
+html.font-scale-compact .text-sm { font-size: 13px !important; }
+html.font-scale-compact .text-base { font-size: 15px !important; }
+html.font-scale-compact .text-lg { font-size: 17px !important; }
+html.font-scale-compact .text-xl { font-size: 19px !important; }
+html.font-scale-compact .text-2xl { font-size: 22px !important; }
+html.font-scale-compact .text-3xl { font-size: 26px !important; }
+
+/* Level 2: Normal / Standard (100% baseline) */
+html.font-scale-normal body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Level 3: Large (approx 115% text scale) */
+html.font-scale-large body {
+  font-size: 17.5px;
+  line-height: 1.55;
+}
+html.font-scale-large .text-\[6px\],
+html.font-scale-large .text-\[6\.5px\] { font-size: 8px !important; line-height: 1.25 !important; }
+html.font-scale-large .text-\[7px\],
+html.font-scale-large .text-\[7\.5px\] { font-size: 9px !important; line-height: 1.25 !important; }
+html.font-scale-large .text-\[8px\],
+html.font-scale-large .text-\[8\.5px\] { font-size: 10.5px !important; line-height: 1.3 !important; }
+html.font-scale-large .text-\[9px\] { font-size: 11px !important; line-height: 1.35 !important; }
+html.font-scale-large .text-\[10px\] { font-size: 12px !important; line-height: 1.35 !important; }
+html.font-scale-large .text-\[11px\] { font-size: 13px !important; line-height: 1.4 !important; }
+html.font-scale-large .text-xs { font-size: 14px !important; line-height: 1.45 !important; }
+html.font-scale-large .text-sm { font-size: 16px !important; line-height: 1.45 !important; }
+html.font-scale-large .text-base { font-size: 18px !important; line-height: 1.5 !important; }
+html.font-scale-large .text-lg { font-size: 20px !important; line-height: 1.45 !important; }
+html.font-scale-large .text-xl { font-size: 22px !important; line-height: 1.45 !important; }
+html.font-scale-large .text-2xl { font-size: 25px !important; line-height: 1.4 !important; }
+html.font-scale-large .text-3xl { font-size: 29px !important; line-height: 1.35 !important; }
+
+/* Level 4: X-Large (approx 130% text scale) */
+html.font-scale-xlarge body {
+  font-size: 19px;
+  line-height: 1.6;
+}
+html.font-scale-xlarge .text-\[6px\],
+html.font-scale-xlarge .text-\[6\.5px\] { font-size: 9px !important; line-height: 1.3 !important; }
+html.font-scale-xlarge .text-\[7px\],
+html.font-scale-xlarge .text-\[7\.5px\] { font-size: 10px !important; line-height: 1.3 !important; }
+html.font-scale-xlarge .text-\[8px\],
+html.font-scale-xlarge .text-\[8\.5px\] { font-size: 11.5px !important; line-height: 1.35 !important; }
+html.font-scale-xlarge .text-\[9px\] { font-size: 12px !important; line-height: 1.4 !important; }
+html.font-scale-xlarge .text-\[10px\] { font-size: 13px !important; line-height: 1.4 !important; }
+html.font-scale-xlarge .text-\[11px\] { font-size: 14px !important; line-height: 1.45 !important; }
+html.font-scale-xlarge .text-xs { font-size: 15.5px !important; line-height: 1.5 !important; }
+html.font-scale-xlarge .text-sm { font-size: 17.5px !important; line-height: 1.5 !important; }
+html.font-scale-xlarge .text-base { font-size: 19.5px !important; line-height: 1.5 !important; }
+html.font-scale-xlarge .text-lg { font-size: 22px !important; line-height: 1.45 !important; }
+html.font-scale-xlarge .text-xl { font-size: 24px !important; line-height: 1.45 !important; }
+html.font-scale-xlarge .text-2xl { font-size: 28px !important; line-height: 1.35 !important; }
+html.font-scale-xlarge .text-3xl { font-size: 32px !important; line-height: 1.3 !important; }
+
+/* Level 5: Maximum / Huge (approx 145% text scale for highest senior legibility) */
+html.font-scale-huge body {
+  font-size: 20.5px;
+  line-height: 1.65;
+}
+html.font-scale-huge .text-\[6px\],
+html.font-scale-huge .text-\[6\.5px\] { font-size: 10px !important; line-height: 1.3 !important; }
+html.font-scale-huge .text-\[7px\],
+html.font-scale-huge .text-\[7\.5px\] { font-size: 11px !important; line-height: 1.3 !important; }
+html.font-scale-huge .text-\[8px\],
+html.font-scale-huge .text-\[8\.5px\] { font-size: 12.5px !important; line-height: 1.35 !important; }
+html.font-scale-huge .text-\[9px\] { font-size: 13.5px !important; line-height: 1.4 !important; }
+html.font-scale-huge .text-\[10px\] { font-size: 14.5px !important; line-height: 1.4 !important; }
+html.font-scale-huge .text-\[11px\] { font-size: 15.5px !important; line-height: 1.45 !important; }
+html.font-scale-huge .text-xs { font-size: 17px !important; line-height: 1.5 !important; }
+html.font-scale-huge .text-sm { font-size: 19px !important; line-height: 1.5 !important; }
+html.font-scale-huge .text-base { font-size: 21px !important; line-height: 1.5 !important; }
+html.font-scale-huge .text-lg { font-size: 24px !important; line-height: 1.45 !important; }
+html.font-scale-huge .text-xl { font-size: 26px !important; line-height: 1.45 !important; }
+html.font-scale-huge .text-2xl { font-size: 30px !important; line-height: 1.35 !important; }
+html.font-scale-huge .text-3xl { font-size: 35px !important; line-height: 1.3 !important; }
+
+/* Flexible control heights for larger font scales */
+html.font-scale-large button:not(.compact-btn):not(nav button),
+html.font-scale-large input:not([type="checkbox"]):not([type="radio"]),
+html.font-scale-large select {
+  min-height: 46px !important;
+  height: auto !important;
+}
+
+html.font-scale-xlarge button:not(.compact-btn):not(nav button),
+html.font-scale-xlarge input:not([type="checkbox"]):not([type="radio"]),
+html.font-scale-xlarge select {
+  min-height: 50px !important;
+  height: auto !important;
+}
+
+html.font-scale-huge button:not(.compact-btn):not(nav button),
+html.font-scale-huge input:not([type="checkbox"]):not([type="radio"]),
+html.font-scale-huge select {
+  min-height: 54px !important;
+  height: auto !important;
+}
+
+/* Ensure text wrapping and prevent unnatural clipping in scaling modes */
+html.font-scale-large h1, html.font-scale-large h2, html.font-scale-large h3, html.font-scale-large h4,
+html.font-scale-xlarge h1, html.font-scale-xlarge h2, html.font-scale-xlarge h3, html.font-scale-xlarge h4,
+html.font-scale-huge h1, html.font-scale-huge h2, html.font-scale-huge h3, html.font-scale-huge h4,
+html.font-scale-large p, html.font-scale-xlarge p, html.font-scale-huge p {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Ensure icon symbols keep line-height tight */
+html.font-scale-large .material-symbols-outlined,
+html.font-scale-xlarge .material-symbols-outlined,
+html.font-scale-huge .material-symbols-outlined {
+  line-height: 1 !important;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   High Contrast Mode (WCAG AAA Compliance: Solid high-contrast text and borders)
+   ========================================================================== */
+html.high-contrast body {
+  background-color: #f1f5f9 !important;
+  color: #000000 !important;
+}
+
+/* ==========================================================================
+   High Contrast Mode (WCAG AAA Compliance: Solid high-contrast text and borders)
+   ========================================================================== */
+html.high-contrast body {
+  background-color: #f8fafc !important;
+  color: #000000 !important;
+}
+
+/* Base containers in high contrast */
+html.high-contrast .bg-white {
+  background-color: #ffffff !important;
+  border: 2px solid #0f172a !important;
+}
+
+html.high-contrast header {
+  background-color: #ffffff !important;
+  border-bottom: 2px solid #000000 !important;
+}
+
+html.high-contrast nav.fixed.bottom-0 {
+  background-color: #ffffff !important;
+  border-top: 2px solid #000000 !important;
+}
+
+/* High contrast navigation tabs */
+html.high-contrast nav.fixed.bottom-0 button {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html.high-contrast nav.fixed.bottom-0 button[aria-selected="true"] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.high-contrast nav.fixed.bottom-0 button[aria-selected="true"] span,
+html.high-contrast nav.fixed.bottom-0 button[aria-selected="true"] .material-symbols-outlined {
+  color: #ffffff !important;
+}
+
+/* High contrast primary dark cards & banners */
+html.high-contrast .bg-gradient-to-br,
+html.high-contrast .bg-gradient-to-r,
+html.high-contrast .bg-emerald-950,
+html.high-contrast .bg-emerald-900,
+html.high-contrast .bg-indigo-950,
+html.high-contrast .bg-slate-900,
+html.high-contrast .bg-black {
+  background: #022c22 !important;
+  border: 2px solid #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Text directly on dark cards */
+html.high-contrast .bg-gradient-to-br h1,
+html.high-contrast .bg-gradient-to-br h2,
+html.high-contrast .bg-gradient-to-br h3,
+html.high-contrast .bg-gradient-to-br h4,
+html.high-contrast .bg-gradient-to-br p,
+html.high-contrast .bg-gradient-to-r h1,
+html.high-contrast .bg-gradient-to-r h2,
+html.high-contrast .bg-gradient-to-r h3,
+html.high-contrast .bg-gradient-to-r h4,
+html.high-contrast .bg-gradient-to-r p {
+  color: #ffffff !important;
+}
+
+/* Subtitles on dark cards get high-contrast bright yellow */
+html.high-contrast .bg-gradient-to-br .text-emerald-100,
+html.high-contrast .bg-gradient-to-br .text-emerald-200,
+html.high-contrast .bg-gradient-to-br .text-emerald-300,
+html.high-contrast .bg-gradient-to-br .text-emerald-400,
+html.high-contrast .bg-gradient-to-br .text-blue-200,
+html.high-contrast .bg-gradient-to-br .text-blue-300,
+html.high-contrast .bg-gradient-to-br .text-indigo-200,
+html.high-contrast .bg-gradient-to-br .text-indigo-300,
+html.high-contrast .bg-gradient-to-r .text-emerald-100,
+html.high-contrast .bg-gradient-to-r .text-emerald-200,
+html.high-contrast .bg-gradient-to-r .text-emerald-300,
+html.high-contrast .bg-gradient-to-r .text-indigo-200,
+html.high-contrast .bg-gradient-to-r .text-indigo-300 {
+  color: #fef08a !important;
+  font-weight: 800 !important;
+}
+
+/* Dark primary action buttons MUST ALWAYS have crisp white text */
+html.high-contrast button.bg-emerald-800,
+html.high-contrast button.bg-emerald-800 *,
+html.high-contrast button.bg-emerald-900,
+html.high-contrast button.bg-emerald-900 *,
+html.high-contrast button.bg-emerald-950,
+html.high-contrast button.bg-emerald-950 *,
+html.high-contrast button.bg-slate-900,
+html.high-contrast button.bg-slate-900 *,
+html.high-contrast button.bg-indigo-900,
+html.high-contrast button.bg-indigo-900 *,
+html.high-contrast button.bg-blue-900,
+html.high-contrast button.bg-blue-900 *,
+html.high-contrast button.bg-red-700,
+html.high-contrast button.bg-red-700 *,
+html.high-contrast button.bg-black,
+html.high-contrast button.bg-black * {
+  color: #ffffff !important;
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* Light buttons */
+html.high-contrast button.bg-white,
+html.high-contrast button.bg-slate-50,
+html.high-contrast button.bg-slate-100 {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+html.high-contrast button.bg-white *,
+html.high-contrast button.bg-slate-50 *,
+html.high-contrast button.bg-slate-100 * {
+  color: #000000 !important;
+}
+
+/* Form inputs */
+html.high-contrast input,
+html.high-contrast select,
+html.high-contrast textarea {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  font-weight: 700 !important;
+}
+
+html.high-contrast input::placeholder {
+  color: #334155 !important;
+}
+
+/* General high contrast text color overrides for guaranteed readability */
+html.high-contrast .text-slate-400,
+html.high-contrast .text-slate-500,
+html.high-contrast .text-slate-600,
+html.high-contrast .text-slate-700 {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+html.high-contrast .text-slate-800,
+html.high-contrast .text-slate-900 {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html.high-contrast .text-emerald-700,
+html.high-contrast .text-emerald-800,
+html.high-contrast .text-emerald-900,
+html.high-contrast .text-emerald-950 {
+  color: #022c22 !important;
+  font-weight: 800 !important;
+}
+
+/* Badges & chips */
+html.high-contrast .rounded-full,
+html.high-contrast .rounded-xl,
+html.high-contrast .rounded-2xl {
+  border-width: 1.5px !important;
+}
+
+/* Modals & Dialogs in High Contrast */
+html.high-contrast .fixed.inset-0.bg-black\/50,
+html.high-contrast .fixed.inset-0.bg-black\/60 {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+
+/* Custom shadow & Card styles */
+.id-card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(6, 78, 59, 0.12), 0 2px 6px -1px rgba(6, 78, 59, 0.06);
+}
+
+.card-shadow {
+  box-shadow: 0 1px 3px 0 rgba(6, 78, 59, 0.05), 0 1px 2px -1px rgba(6, 78, 59, 0.05);
+}
+
+.qr-container {
+  border: 3px solid #064e3b;
+}
+
+/* Hide scrollbar globally for a native mobile phone feel */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
+   W3C Mobile Accessibility Standard Guidelines Compliance
+   ========================================================================== */
+
+/* 1. High Visibility Focus Ring (WCAG 2.4.7 Focus Visible & 2.4.11 Focus Appearance) */
+:focus-visible {
+  outline: 3px solid #064e3b !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(6, 78, 59, 0.25) !important;
+}
+
+html.high-contrast :focus-visible {
+  outline: 3px solid #000000 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px #facc15 !important;
+}
+
+/* 2. Expanded Touch Targets Mode (Comfortable for tremors / motor impairments) */
+/* Genuinely expands buttons, tap areas, and hitboxes with generous finger clearance */
+html.large-touch-targets button,
+html.large-touch-targets a[role="button"],
+html.large-touch-targets [role="button"] {
+  min-height: 52px;
+  touch-action: manipulation;
+}
+
+html.large-touch-targets input:not([type="checkbox"]):not([type="radio"]),
+html.large-touch-targets select,
+html.large-touch-targets textarea {
+  min-height: 50px !important;
+  font-size: 1.02em !important;
+}
+
+html.large-touch-targets input[type="checkbox"],
+html.large-touch-targets input[type="radio"] {
+  min-width: 22px !important;
+  min-height: 22px !important;
+  cursor: pointer;
+}
+
+html.large-touch-targets nav.fixed.bottom-0 button {
+  min-height: 54px !important;
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+}
+
+html.large-touch-targets .clickable-card {
+  padding: 1.1rem !important;
+}
+
+/* 3. Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* 4. Screen-Reader / Keyboard Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: #064e3b;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 800;
+  font-size: 0.875rem;
+  z-index: 9999;
+  transition: top 0.2s ease-in-out;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid #facc15;
+}
+
+/* 5. Safe Area Insets for Mobile Notches & Bottom Navigation Bars */
+@supports (padding: env(safe-area-inset-bottom)) {
+  nav.fixed.bottom-0 {
+    padding-bottom: calc(0.375rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* ==========================================================================
+   Color Vision & Senior Eye Clarity Profiles (Aging Eye & PWD Color Blindness)
+   Guaranteed legibility: Text never blends or disappears with background colors.
+   ========================================================================== */
+
+/* Universal baseline contrast rules for savings & computation stat cards */
+.savings-summary-card {
+  transition: all 0.2s ease;
+}
+
+/* High Contrast Mode rules for savings cards */
+html.high-contrast .savings-summary-card {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.high-contrast .savings-label {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.high-contrast .savings-amount {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.high-contrast .savings-icon {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.high-contrast .savings-hero-card {
+  background: #000000 !important;
+  border: 2px solid #000000 !important;
+  color: #ffffff !important;
+}
+
+html.high-contrast .savings-hero-label {
+  color: #fef08a !important;
+  font-weight: 800 !important;
+}
+
+html.high-contrast .savings-hero-amount {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+html.high-contrast .calc-stat-box {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.high-contrast .calc-stat-label {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.high-contrast .calc-stat-value {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+/* 1. Senior Eye Clarity & Anti-Glare Mode (Aging Eye Vision / Cataract Anti-Scatter)
+   - Eliminates light-scattering blinding whites and yellow-tint muddying
+   - Replaces low-contrast yellow/amber hues with crisp high-transmission cool cyan/white
+   - High contrast solid dark text on light cards; crisp bright cyan on dark headers
+*/
+html.cvd-senior-clarity body {
+  background-color: #f1f5f9 !important;
+  color: #020617 !important;
+}
+
+html.cvd-senior-clarity .bg-white {
+  background-color: #ffffff !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Dark hero banners only */
+html.cvd-senior-clarity .bg-emerald-950,
+html.cvd-senior-clarity .bg-emerald-900,
+html.cvd-senior-clarity .bg-indigo-950,
+html.cvd-senior-clarity .savings-hero-card {
+  background: linear-gradient(135deg, #020617 0%, #0f172a 100%) !important;
+  border: 2px solid #0284c7 !important;
+  color: #ffffff !important;
+}
+
+html.cvd-senior-clarity .savings-hero-label {
+  color: #38bdf8 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-senior-clarity .savings-hero-amount {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+/* Senior Clarity Savings Summary Card - High Contrast Light Container */
+html.cvd-senior-clarity .savings-summary-card {
+  background-color: #f8fafc !important;
+  border: 2px solid #0284c7 !important;
+}
+
+html.cvd-senior-clarity .savings-label {
+  color: #0369a1 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-senior-clarity .savings-amount {
+  color: #020617 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-senior-clarity .savings-icon {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+  border: 2px solid #0369a1 !important;
+}
+
+html.cvd-senior-clarity .calc-stat-box {
+  background-color: #f8fafc !important;
+  border: 2px solid #0284c7 !important;
+}
+
+html.cvd-senior-clarity .calc-stat-label {
+  color: #0369a1 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-senior-clarity .calc-stat-value {
+  color: #020617 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-senior-clarity button.bg-emerald-800,
+html.cvd-senior-clarity button.bg-emerald-900,
+html.cvd-senior-clarity .bg-emerald-800 {
+  background-color: #0369a1 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #0284c7 !important;
+}
+
+html.cvd-senior-clarity button.bg-emerald-800 *,
+html.cvd-senior-clarity button.bg-emerald-900 * {
+  color: #ffffff !important;
+}
+
+html.cvd-senior-clarity .bg-emerald-50,
+html.cvd-senior-clarity .bg-emerald-100 {
+  background-color: #f0f9ff !important;
+  border-color: #bae6fd !important;
+}
+
+html.cvd-senior-clarity .text-emerald-700,
+html.cvd-senior-clarity .text-emerald-800,
+html.cvd-senior-clarity .text-emerald-900,
+html.cvd-senior-clarity .text-emerald-950 {
+  color: #0369a1 !important;
+  font-weight: 800 !important;
+}
+
+/* 2. Deuteranopia / Protanopia Mode (Red-Green Color Vision Deficiency)
+   - Replaces red/green semantic pairings with Royal Cobalt Blue & Warm Amber
+   - High luminance differentiation with distinct icon cues
+*/
+html.cvd-deuteranopia .bg-emerald-950,
+html.cvd-deuteranopia .bg-emerald-900,
+html.cvd-deuteranopia .savings-hero-card {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+  border: 2px solid #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+html.cvd-deuteranopia .savings-hero-label {
+  color: #bfdbfe !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-deuteranopia .savings-hero-amount {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+/* Deuteranopia Savings Summary Card - High Contrast Light Container */
+html.cvd-deuteranopia .savings-summary-card {
+  background-color: #eff6ff !important;
+  border: 2px solid #3b82f6 !important;
+}
+
+html.cvd-deuteranopia .savings-label {
+  color: #1e40af !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-deuteranopia .savings-amount {
+  color: #0f172a !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-deuteranopia .savings-icon {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+  border: 2px solid #1e40af !important;
+}
+
+html.cvd-deuteranopia .calc-stat-box {
+  background-color: #eff6ff !important;
+  border: 2px solid #3b82f6 !important;
+}
+
+html.cvd-deuteranopia .calc-stat-label {
+  color: #1e40af !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-deuteranopia .calc-stat-value {
+  color: #0f172a !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-deuteranopia button.bg-emerald-800,
+html.cvd-deuteranopia button.bg-emerald-900,
+html.cvd-deuteranopia .bg-emerald-800 {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+html.cvd-deuteranopia button.bg-emerald-800 *,
+html.cvd-deuteranopia button.bg-emerald-900 * {
+  color: #ffffff !important;
+}
+
+html.cvd-deuteranopia .text-emerald-700,
+html.cvd-deuteranopia .text-emerald-800,
+html.cvd-deuteranopia .text-emerald-900 {
+  color: #1e40af !important;
+  font-weight: 800 !important;
+}
+
+html.cvd-deuteranopia .bg-emerald-50,
+html.cvd-deuteranopia .bg-emerald-100 {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+}
+
+html.cvd-deuteranopia .text-emerald-100,
+html.cvd-deuteranopia .text-emerald-200,
+html.cvd-deuteranopia .text-emerald-300 {
+  color: #bfdbfe !important;
+}
+
+/* 3. Tritanopia Mode (Blue-Yellow Color Vision Deficiency)
+   - Replaces blue/yellow confusion colors with High-Contrast Deep Teal & Vivid Crimson/Magenta
+*/
+html.cvd-tritanopia .bg-emerald-950,
+html.cvd-tritanopia .bg-emerald-900,
+html.cvd-tritanopia .savings-hero-card {
+  background: linear-gradient(135deg, #042f2e 0%, #134e4a 100%) !important;
+  border: 2px solid #0d9488 !important;
+  color: #ffffff !important;
+}
+
+html.cvd-tritanopia .savings-hero-label {
+  color: #99f6e4 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-tritanopia .savings-hero-amount {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+/* Tritanopia Savings Summary Card - High Contrast Light Container */
+html.cvd-tritanopia .savings-summary-card {
+  background-color: #f0fdfa !important;
+  border: 2px solid #0d9488 !important;
+}
+
+html.cvd-tritanopia .savings-label {
+  color: #115e59 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-tritanopia .savings-amount {
+  color: #022c22 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-tritanopia .savings-icon {
+  background-color: #0f766e !important;
+  color: #ffffff !important;
+  border: 2px solid #115e59 !important;
+}
+
+html.cvd-tritanopia .calc-stat-box {
+  background-color: #f0fdfa !important;
+  border: 2px solid #0d9488 !important;
+}
+
+html.cvd-tritanopia .calc-stat-label {
+  color: #115e59 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-tritanopia .calc-stat-value {
+  color: #022c22 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-tritanopia button.bg-emerald-800,
+html.cvd-tritanopia button.bg-emerald-900,
+html.cvd-tritanopia .bg-emerald-800 {
+  background-color: #0f766e !important;
+  color: #ffffff !important;
+}
+
+html.cvd-tritanopia button.bg-emerald-800 *,
+html.cvd-tritanopia button.bg-emerald-900 * {
+  color: #ffffff !important;
+}
+
+html.cvd-tritanopia .text-amber-500,
+html.cvd-tritanopia .text-amber-600,
+html.cvd-tritanopia .text-yellow-400 {
+  color: #e11d48 !important;
+  font-weight: 800 !important;
+}
+
+html.cvd-tritanopia .bg-amber-50,
+html.cvd-tritanopia .bg-amber-100 {
+  background-color: #fff1f2 !important;
+  color: #be123c !important;
+  border-color: #fecdd3 !important;
+}
+
+/* 4. Achromatopsia / High Distinction Grayscale Mode (Total Color Blindness)
+   - Pure luminance scale, distinct border weights, clear typographic boundaries
+*/
+html.cvd-achromatopsia {
+  filter: grayscale(100%);
+}
+
+html.cvd-achromatopsia .savings-hero-card {
+  background: #000000 !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+}
+
+html.cvd-achromatopsia .savings-hero-label {
+  color: #e4e4e7 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-achromatopsia .savings-hero-amount {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-achromatopsia .savings-summary-card {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.cvd-achromatopsia .savings-label {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-achromatopsia .savings-amount {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-achromatopsia .savings-icon {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.cvd-achromatopsia .calc-stat-box {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.cvd-achromatopsia .calc-stat-label {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-achromatopsia .calc-stat-value {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+html.cvd-achromatopsia button.bg-emerald-800,
+html.cvd-achromatopsia button.bg-emerald-900 {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+html.cvd-achromatopsia button.bg-emerald-800 *,
+html.cvd-achromatopsia button.bg-emerald-900 * {
+  color: #ffffff !important;
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "name": "KaagapayID",
+  "description": "Accessible Digital ID & Benefits System for Senior Citizens and Persons with Disabilities (PWDs)",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
